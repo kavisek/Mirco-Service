@@ -1,7 +1,7 @@
 #!flask/bin/python
 
-"""Alternative version of the ToDo RESTful server implemented using the
-Flask-RESTful extension."""
+# Alternative version of the ToDo RESTful server implemented using the
+# Flask-RESTful extension.
 import numpy as np
 from flask import Flask, jsonify, abort, make_response
 from flask_restful import Api, Resource, reqparse, fields, marshal
@@ -9,39 +9,37 @@ from flask_httpauth import HTTPBasicAuth
 from sklearn.datasets import load_iris
 from sklearn.externals import joblib
 
+# Iniate the Flask App
 app = Flask(__name__, static_url_path="")
 api = Api(app)
 auth = HTTPBasicAuth()
 
-# Adding Username and Password Authentication
-
 
 @auth.get_password
 def get_password(username):
+    '''# Adding Username and Password Authentication. Username is 'kavi' and
+    password is 'python'. Include (curl -u kavi:python) at the begining of
+    your requset'''
+
     if username == 'kavi':
         return 'python'
     return None
 
-# 403 to 401 Error Handling
-
 
 @auth.error_handler
 def unauthorized():
+    '''# 403 to 401 Error Handling'''
     # return 403 instead of 401 to prevent browsers from displaying the default
     # auth dialog
     return make_response(jsonify({'message': 'Unauthorized access'}), 403)
 
 
-# Models Import
+# Import Trained Model
 loaded_model = joblib.load('Models/lr_model.sav')
 
 # Select Random Training Point
 iris = load_iris()
 X, y = iris.data, iris.target
-
-# Select a real datapoint
-random_datapoint = [X[np.random.randint(X.shape[0])]]
-print(random_datapoint)
 
 
 # Default JSON data
@@ -73,10 +71,9 @@ task_fields = {
     'target': fields.String,
 }
 
-# Task List API: /todo/api/v1.0/tasks
-
 
 class PredictionListAPI(Resource):
+    '''Task List API: /todo/api/v1.0/tasks'''
     decorators = [auth.login_required]
 
     def __init__(self):
@@ -118,8 +115,8 @@ class PredictionListAPI(Resource):
         return {'task': marshal(task, task_fields)}, 201
 
 
-# Task API todo/api/v1.0/tasks/<int:id>
 class PredictionAPI(Resource):
+    '''Task API todo/api/v1.0/tasks/<int:id>'''
     decorators = [auth.login_required]
 
     def __init__(self):
@@ -171,6 +168,6 @@ api.add_resource(PredictionListAPI, '/todo/api/v1.0/tasks', endpoint='tasks')
 api.add_resource(PredictionAPI, '/todo/api/v1.0/tasks/<int:id>',
                  endpoint='task')
 
-
+# Run the flask app on strart up
 if __name__ == '__main__':
     app.run(debug=True)
