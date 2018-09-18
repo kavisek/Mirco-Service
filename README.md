@@ -1,6 +1,6 @@
-# Predictive Model Restful API
+# Predictive Model - Restful API
 
-A template Flask Restful API that is used to retrieve data from an external and feed back our predictive models prediction. This micro service is configured for the iris dataset. Please feel free to modify the code to your datasets. I have written comment within the code for each section. If you want this model to run in your local environment , to see how a micro service would operate please following the below instruction.
+A template Flask Restful API that is used to retrieve data from an external and feedback our model's prediction. This micro service is configured for the iris dataset. Please feel free to modify the code to your datasets. I have written comment within the code for each section. If you want this model to run in your local environment, to see how a microservice would operate please following the below instruction.
 
 1. Create a virtual environment
 
@@ -24,8 +24,8 @@ Then activate and enter the environment
 
 `python model_app.py`
 
-5. The model api should be running now.
-6. Open up another terminal window and run the following commands to test the api
+5. The model API should be running now.
+6. Open up another terminal window and run the following commands to test the API
 
 
 View all Prediction: `curl -u kavi:python -i http://localhost:5000/todo/api/v1.0/tasks`
