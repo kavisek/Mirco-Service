@@ -1,0 +1,30 @@
+# Documenation: https://github.com/miguelgrinberg/REST-tutorial/blob/master/rest-server-v2.py
+
+# Run Instructions
+cd Documents/DataScience/Tutorials/Tutorial\ -\ Flask/
+python app5b.py
+
+#View All Tasks:
+curl -u miguel:python -i http://localhost:5000/todo/api/v1.0/tasks
+
+# View Task 2
+ curl -i http://localhost:5000/todo/api/v1.0/tasks/2
+
+
+# View Task 3(Does not exist):
+curl -u miguel:python -i http://localhost:5000/todo/api/v1.0/tasks/3
+
+# Create Task 3:
+curl -u miguel:python -i -H "Content-Type: application/json" -X POST -d '{"sepal length (cm)":"7.1","sepal width (cm)": "3.0","petal length (cm)": "5.9","petal width (cm)": "2.1"}' http://localhost:5000/todo/api/v1.0/tasks
+
+
+# Update a Task 2:
+curl -u miguel:python -i -H "Content-Type: application/json" -X PUT -d '{"done":true}' http://localhost:5000/todo/api/v1.0/tasks/2
+
+
+# Run Prediction 1:
+curl -u miguel:python -i -H "Content-Type: application/json" -X POST -d '{"sepal length (cm)":"7.1","sepal width (cm)": "3.0","petal length (cm)": "5.9","petal width (cm)": "2.1"}' http://localhost:5000/todo/api/v1.0/tasks
+
+
+# Run Prediction 2:
+curl -u miguel:python -i -H "Content-Type: application/json" -X POST -d '{"sepal length (cm)":"7.1","sepal width (cm)": "3.0","petal length (cm)": "5.9","petal width (cm)": "2.1"}' http://localhost:5000/todo/api/v1.0/tasks
