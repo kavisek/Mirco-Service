@@ -1,4 +1,4 @@
-# Predictive Model - Restful API
+# Predictive Models as Restful APIs
 
 This report contains templates Flask Restful APIs that accept data from an external source, and feedback the models predictions back. Theses "models as  micro services" are configured for the iris dataset. Please feel free to modify the code to your datasets. I have written comment within the code for each section. If you want this model to run in your local environment, pleas take a look the following instruction. All the code in this repo is PEP8 compliant.
 
