@@ -1,6 +1,14 @@
 # Predictive Model - Restful API
 
-A template Flask Restful API that is used to retrieve data from an external and feedback our model's prediction. This micro service is configured for the iris dataset. Please feel free to modify the code to your datasets. I have written comment within the code for each section. If you want this model to run in your local environment, to see how a microservice would operate please following the below instruction.
+This report contains templates Flask Restful APIs that accept data from an external source, and feedback the models predictions back. Theses "models as  micro services" are configured for the iris dataset. Please feel free to modify the code to your datasets. I have written comment within the code for each section. If you want this model to run in your local environment, pleas take a look the following instruction. All the code in this repo is PEP8 compliant.
+
+
+
+### Instruction
+
+These instruction are currently based on the Simple Flask Restful API found in the "Supervised Model API" Subdirectory. All other Subdirectories relate to additional micro services that I am currently working on.
+
+![img](https://www.retriever.nl/wp-content/uploads/2016/11/api.png)
 
 1. Create a virtual environment
 
@@ -14,10 +22,10 @@ Then activate and enter the environment
 
 2. Install the packages we to run the flask app.
 
-`conda install -c anaconda flask `
-`conda install -c conda-forge flask-restful `
-`conda install -c conda-forge flask-httpauth `
-`conda install -c anaconda scikit-learn `
+<br>`conda install -c anaconda flask ` <br>
+<br>`conda install -c conda-forge flask-restful ` <br>
+<br>`conda install -c conda-forge flask-httpauth ` <br>
+<br>`conda install -c anaconda scikit-learn ` <br>
 
 3. Download to clone this repo to your local machine
 4. Run the `model_app.py` in terminal
@@ -32,6 +40,10 @@ View all Prediction: `curl -u kavi:python -i http://localhost:5000/todo/api/v1.0
 
 View the Second Prediction in the API:  `curl -i http://localhost:5000/todo/api/v1.0/tasks/2`
 
-Ask for a Predictin from the API: `curl -u kavi:python -i -H "Content-Type: application/json" -X POST -d '{"sepal length (cm)":"7.1","sepal width (cm)": "3.0","petal length (cm)": "5.9","petal width (cm)": "2.1"}' http://localhost:5000/todo/api/v1.0/tasks`
+Ask for a Predictin from the API:
 
-Update a Prediction: `curl -u kavi:python -i -H "Content-Type: application/json" -X PUT -d '{"sepal length (cm)":"6.1","sepal width (cm)": "2.0","petal length (cm)": "4.8","petal width (cm)": "1.0"}' http://localhost:5000/todo/api/v1.0/tasks/2`
+`curl -u kavi:python -i -H "Content-Type: application/json" -X POST -d '{"sepal length (cm)":"7.1","sepal width (cm)": "3.0","petal length (cm)": "5.9","petal width (cm)": "2.1"}' http://localhost:5000/todo/api/v1.0/tasks`
+
+Update a Prediction:
+
+ `curl -u kavi:python -i -H "Content-Type: application/json" -X PUT -d '{"sepal length (cm)":"6.1","sepal width (cm)": "2.0","petal length (cm)": "4.8","petal width (cm)": "1.0"}' http://localhost:5000/todo/api/v1.0/tasks/2`

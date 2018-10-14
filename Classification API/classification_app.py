@@ -18,7 +18,7 @@ auth = HTTPBasicAuth()
 @auth.get_password
 def get_password(username):
     '''# Adding Username and Password Authentication. Username is 'kavi' and
-    password is 'python'. Include (curl -u kavi:python) at the begining of
+    password is 'python'.Include (curl -u kavi:python) at the begining of
     your requset'''
 
     if username == 'kavi':
