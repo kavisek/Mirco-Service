@@ -9,7 +9,9 @@ This report contains templates Flask Restful APIs that accept data from an exter
 These instruction are currently based on the Simple Flask Restful API found in the "Supervised Model API" Subdirectory. All other Subdirectories relate to additional micro services that I am currently working on.
 
 <br>
-<center>![img](https://cdn-images-1.medium.com/max/1600/1*9oK18ZPQX75ophT4s6Ee6A.png)</center>
+<center>
+![img](https://cdn-images-1.medium.com/max/1600/1*9oK18ZPQX75ophT4s6Ee6A.png)
+</center>
 <br>
 
 1. Create a virtual environment
