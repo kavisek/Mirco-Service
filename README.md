@@ -10,7 +10,7 @@ These instruction are currently based on the Simple Flask Restful API found in t
 
 <br>
 <center>
-![img](Images/template.png)
+![img](./Images/template.png)
 </center>
 <br>
 
