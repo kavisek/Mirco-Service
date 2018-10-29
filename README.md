@@ -10,7 +10,7 @@ These instruction are currently based on the Simple Flask Restful API found in t
 
 <br>
 <center>
-![img](http://cdn-images-1.medium.com/max/1600/1*9oK18ZPQX75ophT4s6Ee6A.png)
+![img](Images/template.png)
 </center>
 <br>
 
