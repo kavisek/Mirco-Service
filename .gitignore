@@ -1,4 +1,4 @@
-# Ignore the Following Files
+# Ignore the following data files.
 .DS_Store
 *.csv
 *.csv.gz
@@ -16,4 +16,5 @@
 *.sav
 *.zip
 
-# Hidden Folders
+# Ignore the following virtual enviroment files.
+**/.venv
