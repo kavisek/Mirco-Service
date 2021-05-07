@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+    postgres:
+      image: postgres:13
+      ports:
+        - 5432:5432
+      environment:
+        POSTGRES_USER: demo
+        POSTGRES_PASSWORD: demo
+      volumes:
+        - postgres-db-volume:/var/lib/postgresql/data
+        - ./database/demo-small-en-20170815.sql:/docker-entrypoint-initdb.d/demo-small-en-20170815.sql.sql
+      healthcheck:
+        test: ["CMD", "pg_isready", "-U", "demo"]
+        interval: 5s
+        retries: 5
+      restart: always
+  
+    redis:
+      image: redis:latest
+      ports:
+        - 6379:6379
+      healthcheck:
+        test: ["CMD", "redis-cli", "ping"]
+        interval: 5s
+        timeout: 30s
+        retries: 50
+      restart: always
+
+volumes:
+  postgres-db-volume:

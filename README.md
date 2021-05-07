@@ -49,3 +49,8 @@ Ask for a Predictin from the API:
 Update a Prediction:
 
  `curl -u kavi:python -i -H "Content-Type: application/json" -X PUT -d '{"sepal length (cm)":"6.1","sepal width (cm)": "2.0","petal length (cm)": "4.8","petal width (cm)": "1.0"}' http://localhost:5000/todo/api/v1.0/tasks/2`
+
+
+### References
+
+- [Airflow Demo Database](https://postgrespro.com/education/demodb)

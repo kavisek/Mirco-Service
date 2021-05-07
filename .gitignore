@@ -18,3 +18,7 @@
 
 # Ignore the following virtual enviroment files.
 **/.venv
+
+
+**/database/*.sql
+!demo-small-en-20170815.sql.gz

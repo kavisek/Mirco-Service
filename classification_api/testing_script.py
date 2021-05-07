@@ -2,7 +2,7 @@ import http
 import requests
 import urllib
 
-headers = {'X-API-TOKEN': 'your_token_here'}
+headers = {"X-API-TOKEN": "your_token_here"}
 payload = "'title'='value1'&'name'='value2'"
 
 conn = httplib.HTTPConnection("heise.de")
@@ -15,9 +15,9 @@ print response
 
 import requests
 
-headers = {'X-API-TOKEN': 'your_token_here'}
-payload = {'title': 'value1', 'name': 'value2'}
+headers = {"X-API-TOKEN": "your_token_here"}
+payload = {"title": "value1", "name": "value2"}
 
 r = requests.post("http://foo.com/foo/bar", data=payload, headers=headers)
-print(r)
-print('Done')
+print (r)
+print ("Done")
