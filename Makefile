@@ -4,6 +4,10 @@ startup:
 	docker-compose down
 	docker-compose up
 
+startup_fresh:
+	docker-compose down
+	docker-compose up
+
 run_api:
 	uvicorn sql_app.main:app --reload
 

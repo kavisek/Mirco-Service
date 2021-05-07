@@ -9,6 +9,8 @@ services:
       ports:
         - 80:80
       restart: always
+      volumes:
+        - ./sql_app:/app
         
     postgres:
       image: postgres:13

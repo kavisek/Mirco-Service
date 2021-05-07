@@ -20,6 +20,13 @@ def get_db():
         db.close()
 
 
+@app.get("/")
+async def root():
+    return {
+        "message": "Welcome to the Model Predictor API 2. Please the docs http://localhost:80/docs."
+    }
+
+
 @app.post("/users/", response_model=schemas.User)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = crud.get_user_by_email(db, email=user.email)
