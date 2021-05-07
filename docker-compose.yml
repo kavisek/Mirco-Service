@@ -1,6 +1,15 @@
 version: "3.8"
 
 services:
+
+    sql_app:
+      build:
+        context: ./sql_app
+        dockerfile: Dockerfile
+      ports:
+        - 80:80
+      restart: always
+        
     postgres:
       image: postgres:13
       ports:
